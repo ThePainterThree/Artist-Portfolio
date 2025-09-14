@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "studio": "npm --prefix sanity run dev"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.26.0",
