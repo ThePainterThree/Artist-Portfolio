@@ -1,1 +1,3 @@
-export const schemaTypes = [];
+import { artworkType } from "./artwork";
+
+export const schemaTypes = [artworkType];
