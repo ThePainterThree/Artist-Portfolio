@@ -28,21 +28,6 @@ export const artworkType = defineType({
       type: "string",
     }),
     defineField({
-      name: "availability",
-      title: "Availability",
-      type: "string",
-      options: {
-        list: [
-          { title: "For Sale", value: "for_sale" },
-          { title: "Sold", value: "sold" },
-          { title: "Not For Sale", value: "nfs" },
-          { title: "Prints Available", value: "prints" },
-        ],
-        layout: "dropdown",
-      },
-   
-    }),
-    defineField({
       name: "images",
       title: "Images",
       type: "array",
@@ -70,3 +55,5 @@ export const artworkType = defineType({
     select: { title: "title", media: "images.0" },
   },
 });
+
+
