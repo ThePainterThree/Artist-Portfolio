@@ -1,10 +1,21 @@
 "use client";
 import { AspectRatio, Box, Flex, Heading } from "@chakra-ui/react";
 import Image from "next/image";
-import { useColorModeValue } from "@/components/ui/color-mode";
+import { useTheme } from "next-themes";
+import { useState, useEffect } from "react";
 
 export default function HomePage() {
-  const imageFilter = useColorModeValue("grayscale(1) invert(1)", "grayscale(1)");
+  
+  const { resolvedTheme } = useTheme();
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
+
+  if (!loaded) return null;
+
+   const imageSrc = resolvedTheme === "dark" ? "/studioDarkTheme.jpg" : "/studioLightTheme.jpg";
 
   return (
     
@@ -16,7 +27,7 @@ export default function HomePage() {
     > 
       <Box position="relative">
         <Image
-          src="/studio.png"
+          src={imageSrc}
           alt="Artist studio"
           fill
           priority
