@@ -44,8 +44,8 @@ export default function Header() {
           <Spacer />
           <HStack gap={2} fontSize="md" display={{ base: "none", md: "flex" }}>
             <NavLink href="/gallery">Gallery</NavLink>
-            <NavLink href="/contact">Shop</NavLink>
             <NavLink href="/about">About</NavLink>
+            <NavLink href="/contact">Contact</NavLink>
           </HStack>
           <ColorModeButton display={{ base: "none", md: "inline-flex" }} ml={2} />
           <Drawer.Trigger asChild>
