@@ -8,36 +8,52 @@ export default function HomePage() {
   
   const { resolvedTheme } = useTheme();
   const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    setLoaded(true);
-  }, []);
-
+  
+  useEffect(() => setLoaded(true), []);
   if (!loaded) return null;
 
-   const imageSrc = resolvedTheme === "dark" ? "/studioDarkTheme.jpg" : "/studioLightTheme.jpg";
-
+  const isDark = resolvedTheme === "dark";
+  const imageDesktopSrc = isDark ? "/studioDarkTheme.jpg" : "/studioLightTheme.jpg";
+  const imageMobileScr = isDark ? "/studioMobileDarkTheme.jpg" : "/studioMobileLightTheme.jpg"
+  
   return (
-      <Box  
-      position="relative"
-      w="100%"
-      h="auto"
-      overflow="hidden"
-      >
-      <Box position="relative" w="100%" minH={{ base: "60vh", md: "80vh" }}>
+    <Box position="relative" w="auto" 
+          h={{ base: "75vh", md: "80vh" }} 
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          overflow="auto" 
+          >
+    
+        <Box position="absolute" inset="0" display={{ base: "none", md: "block" }}>
         <Image
-          src={imageSrc}
+          key={imageDesktopSrc}
+          src={imageDesktopSrc}
           alt="Artist studio"
           fill
           priority
           sizes="100vw"
-          style={{
-            objectFit: "cover",
-            objectPosition: "center",
-            opacity: 0.75,
-          }}
+          style={{ 
+            objectFit: "cover", 
+            objectPosition: "center", 
+            opacity: 0.90 }}
         />
-        </Box>
       </Box>
+
+      <Box position="absolute" inset="0" display={{ base: "block", md: "none" }}>
+        <Image
+          key={imageMobileScr}       
+          src={imageMobileScr}
+          alt="Artist studio"
+          fill
+          priority
+          sizes="120vh"
+          style={{ 
+            objectFit: "cover", 
+            objectPosition: "center", 
+            opacity: 1 }}
+        />
+      </Box>
+    </Box>
   );
 }
