@@ -48,14 +48,17 @@ export default function Header() {
             <NavLink href="/contact">Contact</NavLink>
           </HStack>
           <ColorModeButton display={{ base: "none", md: "inline-flex" }} ml={2} />
+
           <Drawer.Trigger asChild>
             <IconButton
+              color="fg"
               display={{ base: "inline-flex", md: "none" }}
               aria-label="Open menu"
               variant="ghost"
-              icon={<FiMenu />}
               ml={2}
-            />
+            >
+              <FiMenu />
+            </IconButton>
           </Drawer.Trigger>
         </Flex>
       </Box>
@@ -64,7 +67,9 @@ export default function Header() {
         <Drawer.Content>
          
             <Drawer.CloseTrigger asChild>
-              <IconButton aria-label="Close menu" variant="ghost" icon={<FiX />} />
+              <IconButton aria-label="Close menu" variant="ghost">
+                <FiX />
+              </IconButton>
             </Drawer.CloseTrigger>
          
           <Drawer.Body>
@@ -88,4 +93,3 @@ export default function Header() {
     </Drawer.Root>
   );
 }
-
