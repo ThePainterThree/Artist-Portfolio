@@ -36,7 +36,7 @@ export default function HomePage() {
           style={{ 
             objectFit: "cover", 
             objectPosition: "center", 
-            opacity: 0.90 }}
+            opacity: 1 }}
         />
       </Box>
 
