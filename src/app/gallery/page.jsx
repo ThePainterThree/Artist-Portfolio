@@ -1,20 +1,15 @@
 "use client";
 
 import {
-  AspectRatio,
-  Badge,
   Box,
-  Card,
   Heading,
-  HStack,
   SimpleGrid,
   Stack,
-  Tag,
   Text,
-  Image,
 } from "@chakra-ui/react";
+import ArtCard from "@/components/artCard";
 
-//TODO: images dir
+// TODO: images dir
 const artworks = [
   {
     title: "Untitled 1",
@@ -22,7 +17,7 @@ const artworks = [
     year: 2018,
     size: "80 x 100 cm",
     image: "/studioMobileDarkTheme.jpg",
-    tags: ["Older work", "Private Collection"],
+    tags: ["Private Collection"],
   },
   {
     title: "Untitled 2",
@@ -30,7 +25,6 @@ const artworks = [
     year: 2018,
     size: "80 x 80 cm",
     image: "/studioLightTheme.jpg",
-    tags: ["Older work"],
   },
   {
     title: "Untitled 3",
@@ -38,7 +32,6 @@ const artworks = [
     year: 2018,
     size: "80 x 80 cm",
     image: "/studioMobileLightTheme.jpg",
-    tags: ["Older work"],
   },
   {
     title: "Untitled 4",
@@ -54,7 +47,7 @@ const artworks = [
     year: 2025,
     size: "42 x 58 cm",
     image: "/studioMobileDarkTheme.jpg",
-    tags: ["New work", "Study"],
+    tags: ["New work", "Sold"],
   },
   {
     title: "Untitled 6",
@@ -68,64 +61,16 @@ const artworks = [
 
 export default function GalleryPage() {
   return (
-    <Box as="main" px={{ base: 4, md: 8 }} py={{ base: 10, md: 16 }} bg="bg">
-      <Stack spacing={4} maxW="1200px" mx="auto">
-        <Stack spacing={1}>
-          <Heading size="2xl">Gallery</Heading>
-
-          <Text color="gray.500">A selection of art works.</Text>
-        </Stack>
+    <Box as="main" px={{ base: 4, md: 8 }} py={{ base: 10, md: 16 }}>
+      <Stack spacing={{ base: 6, md: 8 }} maxW="1200px" mx="auto">
 
         <SimpleGrid
-          columns={{ base: 1, sm: 2, lg: 3 }}
-          spacing={{ base: 4, md: 6 }}
+          columns={{ base: 1, sm: 2, lg: 4 }}
+          columnGap={{ base: 6, md: 8, lg: 10 }}
+          rowGap={{ base: 8, md: 10, lg: 12 }}
         >
           {artworks.map((artwork) => (
-            <Card.Root
-              key={artwork.title}
-              overflow="hidden"
-              variant="outline"
-              borderColor="blackAlpha.200"
-            >
-              <AspectRatio ratio={4 / 5}>
-                <Image
-                  src={artwork.image}
-                  alt={artwork.title}
-                  objectFit="cover"
-                />
-              </AspectRatio>
-
-              <Card.Body>
-                <Stack spacing={2}>
-                  <HStack justify="space-between" align="flex-start">
-                    <Heading size="md">{artwork.title}</Heading>
-                    <Badge colorScheme="gray" borderRadius="full">
-                      {artwork.year}
-                    </Badge>
-                  </HStack>
-                  <Text fontWeight="medium">{artwork.medium}</Text>
-                  <Text color="gray.500" fontSize="sm">
-                    {artwork.size}
-                  </Text>
-                  {artwork.tags?.length ? (
-                    <Box>
-                      <HStack spacing={2} flexWrap="wrap">
-                        {artwork.tags.map((tag) => (
-                          <Tag.Root
-                            key={tag}
-                            size="sm"
-                            variant="subtle"
-                            colorScheme="purple"
-                          >
-                            <Tag.Label> {tag}</Tag.Label>
-                          </Tag.Root>
-                        ))}
-                      </HStack>
-                    </Box>
-                  ) : null}
-                </Stack>
-              </Card.Body>
-            </Card.Root>
+            <ArtCard key={artwork.title} artwork={artwork} />
           ))}
         </SimpleGrid>
       </Stack>

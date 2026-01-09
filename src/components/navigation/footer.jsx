@@ -13,7 +13,6 @@ export default function Footer() {
         color="fg"
       >
         <Text fontSize="sm">© {new Date().getFullYear()} Yard Aard Studio</Text>
-        <Text fontSize="sm" mt={2}>Made by Patricia 💜 </Text>
       </Flex>
     </Box>
   );
