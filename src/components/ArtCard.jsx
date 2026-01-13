@@ -20,7 +20,7 @@ export default function ArtCard({ artwork }) {
         boxShadow={{ base: "sm", _dark: "none" }}
         rounded="lg"
     >
-      <AspectRatio ratio={4/5}>
+      <AspectRatio ratio={5/5}>
         <Image
           src={artwork.image}
           alt={artwork.title}

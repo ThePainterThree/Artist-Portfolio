@@ -1,59 +1,71 @@
-import { defineType, defineField, defineArrayMember } from "sanity";
+import {defineType, defineField, defineArrayMember} from 'sanity'
 
 export const artworkType = defineType({
-  name: "artwork",
-  title: "Artwork",
-  type: "document",
+  name: 'artwork',
+  title: 'Artwork',
+  type: 'document',
   fields: [
     defineField({
-      name: "title",
-      title: "Title",
-      type: "string",
+      name: 'title',
+      title: 'Title',
+      type: 'string',
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: "slug",
-      title: "Slug",
-      type: "slug",
-      options: { source: "title" },
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {source: 'title'},
     }),
     defineField({
-      name: "year",
-      title: "Year",
-      type: "number",
+      name: 'year',
+      title: 'Year',
+      type: 'number',
     }),
     defineField({
-      name: "medium",
-      title: "Medium",
-      type: "string",
+      name: 'medium',
+      title: 'Medium',
+      type: 'string',
+    }),
+       defineField({
+      name: 'category',
+      title: 'Category',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Canvas', value: 'canvas'},
+          {title: 'Paper', value: 'paper'},
+          {title: 'Other', value: 'other'},
+        ],
+        layout: 'radio',
+      },
+      validation: (rule) => rule.required(),
     }),
     defineField({
-      name: "images",
-      title: "Images",
-      type: "array",
+      name: 'images',
+      title: 'Images',
+      type: 'array',
       of: [
         defineArrayMember({
-          type: "image",
-          options: { hotspot: true },
+          type: 'image',
+          options: {hotspot: true},
           fields: [
             defineField({
-              name: "alt",
-              title: "Alt text",
-              type: "string",
+              name: 'alt',
+              title: 'Alt text',
+              type: 'string',
             }),
           ],
         }),
       ],
     }),
     defineField({
-      name: "description",
-      title: "Description",
-      type: "text",
+      name: 'description',
+      title: 'Description',
+      type: 'text',
     }),
   ],
   preview: {
-    select: { title: "title", media: "images.0" },
+    select: {title: 'title', media: 'images.0'},
   },
-});
-
-
+})
