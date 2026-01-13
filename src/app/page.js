@@ -13,8 +13,8 @@ export default function HomePage() {
   if (!loaded) return null;
 
   const isDark = resolvedTheme === "dark";
-  const imageDesktopSrc = isDark ? "/studioDarkTheme.jpg" : "/studioLightTheme.jpg";
-  const imageMobileScr = isDark ? "/studioMobileDarkTheme.jpg" : "/studioMobileLightTheme.jpg"
+  const imageDesktopSrc = isDark ? "/theme/studioDarkTheme.jpg" : "/theme/studioLightTheme.jpg";
+  const imageMobileScr = isDark ? "/theme/studioMobileDarkTheme.jpg" : "/theme/studioMobileLightTheme.jpg"
   
   return (
     <Box position="relative" w="auto" 
