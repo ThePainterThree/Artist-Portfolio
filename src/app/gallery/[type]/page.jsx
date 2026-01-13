@@ -23,10 +23,6 @@ export default async function GalleryPerTypePage({ params }) {
       <Stack spacing={{ base: 6, md: 8 }} maxW="1200px" mx="auto">
         <Stack spacing={2}>
           <Heading size="2xl">{title}</Heading>
-
-          <Text color="gray.500">
-            {renderArtworks.length} work{renderArtworks.length === 1 ? "" : "s"}
-          </Text>
         </Stack>
 
         <SimpleGrid

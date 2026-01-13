@@ -1,7 +1,7 @@
 export const categories = [
   {
     title: "Paintings on canvas",
-    slug: "paintings on canvas",
+    slug: "canvas",
     image: "/gallery/canvas.jpg",
   },
   {
