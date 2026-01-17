@@ -1,18 +1,17 @@
 export const categories = [
   {
-    title: "Paintings on canvas",
-    slug: "canvas",
+    title: "Paintings",
+    slug: "painting",
     image: "/gallery/canvas.jpg",
   },
-  {
-    title: "Works on paper",
-    slug: "paper",
-    image: "/gallery/paper.jpg",
+   {
+    title: "Mixed Media",
+    slug: "mixed media",
+    image: "/gallery/other.jpg",
   },
   {
-    title: "Other",
-    slug: "other",
-    description: "Objects and mixed media",
-    image: "/gallery/other.jpg",
+    title: "Prints",
+    slug: "prints",
+    image: "/gallery/prints.jpg",
   },
 ];

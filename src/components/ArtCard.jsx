@@ -4,7 +4,6 @@ import {
   AspectRatio,
   Badge,
   Card,
-  Heading,
   HStack,
   Stack,
   Tag,
@@ -17,8 +16,7 @@ export default function ArtCard({ artwork }) {
     <Card.Root
         borderColor={{ base: "blackAlpha.200", _dark: "whiteAlpha.200" }}
         borderWidth="2px"
-        boxShadow={{ base: "sm", _dark: "none" }}
-        rounded="lg"
+       
     >
       <AspectRatio ratio={5/5}>
         <Image
@@ -30,19 +28,13 @@ export default function ArtCard({ artwork }) {
       </AspectRatio>
 
       <Card.Body p={{ base: 4, md: 5 }}>
-        <Stack spacing={3}>
+        <Stack spacing={1}>
           <HStack justify="space-between" align="flex-start">
-            <Heading size="sm">{artwork.title}</Heading>
+            <Text fontSize="small">{artwork.title}</Text>
             <Badge colorScheme="gray">
               {artwork.year}
             </Badge>
           </HStack>
-
-          <Text fontWeight="small">{artwork.medium}</Text>
-
-          <Text color="gray.500" fontSize="sm">
-            {artwork.size}
-          </Text>
 
           {artwork.tags?.length && (
             <HStack pt={1} spacing={2} rowGap={2} flexWrap="wrap">

@@ -12,7 +12,7 @@ export default function Footer() {
         mx="auto"
         color="fg"
       >
-        <Text fontSize="sm">© {new Date().getFullYear()} Yard Aard Studio</Text>
+        <Text fontSize="sm">© {new Date().getFullYear()} Yard Aart Studio</Text>
       </Flex>
     </Box>
   );

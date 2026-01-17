@@ -1,4 +1,4 @@
-import { Box, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { Box, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import ArtCard from "@/components/ArtCard";
 import { categories } from "@/lib/categories";
@@ -19,13 +19,14 @@ export default async function GalleryPerTypePage({ params }) {
   }));
 
   return (
-    <Box as="main" px={{ base: 4, md: 8 }} py={{ base: 10, md: 16 }}>
-      <Stack spacing={{ base: 6, md: 8 }} maxW="1200px" mx="auto">
-        <Stack spacing={2}>
-          <Heading size="2xl">{title}</Heading>
+
+    <Box as="main" px={{ base: 4, md: 8 }} py={{ base: 8, md: 12 }}>
+      <Stack maxW="1200px" mx="auto" textAlign="left" >
+          <Text color="gray.500" fontSize="md">{title}</Text>
         </Stack>
 
         <SimpleGrid
+        mt={{ base: 12, md: 12, lg:12 }}
           columns={{ base: 1, sm: 2, lg: 3 }}
           columnGap={{ base: 6, md: 8, lg: 10 }}
           rowGap={{ base: 8, md: 10, lg: 12 }}
@@ -38,7 +39,7 @@ export default async function GalleryPerTypePage({ params }) {
         {!renderArtworks.length && (
           <Text color="gray.500">New works coming soon.</Text>
         )}
-      </Stack>
+  
       <Stack align="flex-end" pt={{ base: 8, md: 12 }}>
         <Text
           as={Link}

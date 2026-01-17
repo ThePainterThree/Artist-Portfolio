@@ -33,9 +33,9 @@ export const artworkType = defineType({
       type: 'string',
       options: {
         list: [
-          {title: 'Canvas', value: 'canvas'},
-          {title: 'Paper', value: 'paper'},
-          {title: 'Other', value: 'other'},
+          {title: 'Painting', value: 'painting'},
+          {title: 'Mixed Media', value: 'mixed media'},
+          {title: 'Print', value: 'print'},
         ],
         layout: 'radio',
       },
