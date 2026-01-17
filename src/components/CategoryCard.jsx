@@ -3,8 +3,6 @@
 import {
   AspectRatio,
   Card,
-  Heading,
-  Stack,
   Text,
   Image,
 } from "@chakra-ui/react";
@@ -17,15 +15,13 @@ export default function CategoryCard({ category }) {
       href={`/gallery/${category.slug}`}
       minW={0}
       overflow="hidden"
-      variant="outline"
-      borderWidth="2px"
+      variant="subtle"
       borderColor={{ base: "blackAlpha.200", _dark: "whiteAlpha.200" }}
       boxShadow={{ base: "sm", _dark: "none" }}
-      rounded="lg"
       _hover={{ transform: "translateY(-2px)" }}
       transition="transform 0.15s ease"
     >
-      <AspectRatio ratio={4 / 3}>
+      <AspectRatio ratio={3 / 3}>
         <Image
           src={category.image}
           alt={category.title}
@@ -34,14 +30,12 @@ export default function CategoryCard({ category }) {
         />
       </AspectRatio>
 
-      <Card.Body p={{ base: 4, md: 5 }}>
-        <Stack spacing={1}>
-          <Heading size="md">{category.title}</Heading>
+      <Card.Body p={{ base: 2, md: 3 }}>
+          <Text color="gray.500" size="sm" fontSize="medium">{category.title}</Text>
           <Text color="gray.500" fontSize="sm">
             {category.description}
           </Text>
-        </Stack>
       </Card.Body>
-    </Card.Root>
+     </Card.Root>
   );
 }
