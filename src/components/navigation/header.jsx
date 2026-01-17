@@ -30,20 +30,9 @@ export default function Header() {
         zIndex="docked"
       >
         <Flex h="60px" align="center" maxW="1300px" mx="auto" px={2}>
-          <Button
-            as={Link}
-            href="/"
-            variant="ghost"
-            size="lg"
-            fontWeight="bold"
-            fontFamily="monospace"
-            color="fg"
-          >
-          Yard Aard
-          </Button>
-          <Spacer />
+          <Spacer/>
           <HStack gap={2} fontSize="md" display={{ base: "none", md: "flex" }}>
-            <NavLink href="/home">Home</NavLink>
+            <NavLink href="/">Home</NavLink>
             <NavLink href="/gallery">Gallery</NavLink>
             <NavLink href="/about">About</NavLink>
             <NavLink href="/contact">Contact</NavLink>
@@ -76,7 +65,7 @@ export default function Header() {
           <Drawer.Body>
             <Flex direction="column" gap={2}>
             <Drawer.CloseTrigger asChild>
-                <NavLink href="/home">Home</NavLink>
+                <NavLink href="/">Home</NavLink>
               </Drawer.CloseTrigger>
               <Drawer.CloseTrigger asChild>
                 <NavLink href="/gallery">Gallery</NavLink>
